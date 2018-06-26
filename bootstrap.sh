@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo -l > /dev/null
+
 if [ -z $1 ]; then
     read -e -p "Please specify workspace location: [~/workspace] " WORKSPACE
 fi

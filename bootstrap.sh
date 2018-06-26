@@ -1,12 +1,16 @@
 #!/bin/bash
 
-read -e -p "Please specify workspace location: [~/workspace] " WORKSPACE
-
-set -xe
+if [ -z $1 ]; then
+    read -e -p "Please specify workspace location: [~/workspace] " WORKSPACE
+fi
 
 [ -z ${WORKSPACE} ] && export WORKSPACE=${HOME}/workspace
 mkdir -p ${WORKSPACE}
 cd ${WORKSPACE}
+
+read -e -p "P4 dependencies will be checked out to ${WORKSPACE}, press Enter to start "
+
+set -xe
 
 sudo apt-get update
 

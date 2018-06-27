@@ -1,5 +1,9 @@
 # p4env
 
+**p4env** is an utility for installing dependencies required by P4 automatically. 
+
+Currently, it works for Ubuntu 16.04 LTS.
+
 ### Requirements
 
 * sudo

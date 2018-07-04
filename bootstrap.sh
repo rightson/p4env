@@ -3,14 +3,17 @@
 sudo -l > /dev/null
 
 if [ -z $1 ]; then
-    read -e -p "Please specify workspace location: [~/workspace] " WORKSPACE
+    read -e -p "Specify workspace location: [~/workspace] " WORKSPACE
 fi
 
 [ -z ${WORKSPACE} ] && export WORKSPACE=${HOME}/workspace
 mkdir -p ${WORKSPACE}
 cd ${WORKSPACE}
 
-read -e -p "P4 dependencies will be checked out to ${WORKSPACE}, press Enter to start "
+echo "Location to put P4 packages: [${WORKSPACE}]"
+read -rep "Press [Enter] to start the installation process" 
+
+mkdir -p ${WORKSPACE}
 
 set -xe
 
